@@ -1,0 +1,8 @@
+.direnv
+*.pyc
+.env
+venv
+.idea
+db.sqlite3
+.DS_Store
+.envrc
