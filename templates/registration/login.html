@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{% load static %}
+
+
+{% block content %}
+
+    <h1>Login Page!</h1>
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Log Me In">
+    </form>
+    <br>
+    <br>
+    <br>
+    <img src="{% static 'img/spinachomellete.png' %}" alt="" style="width:450px;height:450px;"/>
+
+{%  endblock%}

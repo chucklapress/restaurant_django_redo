@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+<div class="container">
+<br>
+<br>
+<br>
+<h4>Menu Items:</h4>
+
+{% for object in object_list %}
+<img src='{{object.uploads}}'class= 'img-responsive' />
+
+<br>
+<p>********************</p>
+<p>Item name: {{ object.item_name }}</p>
+<p>Item cost: ${{ object.item_cost }}</p>
+<p>Item description: {{ object.item_description }}</p>
+<br>
+<br>
+<p>Item Image: <img src="{{object.item_image.url}}"class="img-responsive"</p>
+
+<p>********************</p>
+
+{% endfor %}
+
+
+</div>
+{% endblock %}

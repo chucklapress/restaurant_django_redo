@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Your Check</h2>
+Check number:<p>{{object.id}}</p>
+Server ID:<p>{{ object.server_id }}</p>
+Ordered on:<p>{{ object.time_stamp}}</p>
+Check closed T/F:<p>{{ object.is_cashed }}</p>
+Order cooked T/F:<p>{{ object.is_completed }}</p>
+Memos:<p>{{object.memo_notes}}</p>
+Table number:<p>{{ object.table_number }}</p>
+{% for total_bill in object.total_bill.all %}
+      Order Summary:<li>{{ total_bill }}</li>
+{% endfor %}
+
+{% endblock %}

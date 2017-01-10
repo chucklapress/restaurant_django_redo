@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Current Orders</h3>
+<br>
+{% for object in object_list %}
+    Check number:<p>{{object.id}}</p>
+    Table number:<p>{{object.table_number}}</p>
+    Server name:<p>{{ object.server_id }}</p>
+    Time ordered:<p>{{ object.time_stamp}}</p>
+    Check open T/F:<p>{{ object.is_cashed }}</p>
+    Memos:<p>{{ object.memo_notes }}</p>
+    Order cooked T/F:<p>{{ object.is_completed }}</p>
+    <br>
+    <a href="{%url 'order_detail_view' object.id %}">Check Detail</a>
+    <br>
+{% endfor %}
+
+
+
+
+<br>
+<br>
+{% if is_paginated %}
+<ul class="pagination">
+{% if page_obj.has_previous %}
+    <li>
+        <span><a href="?page={{ page_obj.previous_page_number }}">Previous</a></span>
+    </li>
+{% endif %}
+    <li class="">
+        <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</span>
+    </li>
+{% if page_obj.has_next %}
+    <li>
+        <span><a href="?page={{ page_obj.next_page_number }}">Next</a></span>
+    </li>
+{% endif %}
+</ul>
+{% else %}
+    <h4>No More Orders To Display</h4>
+
+{% endif %}
+
+
+
+{% endblock %}

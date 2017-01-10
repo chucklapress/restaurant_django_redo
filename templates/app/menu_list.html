@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <h3>Breakfast Delights</h3>
+{% for object in object_list %}
+      <p>{{ object.entry }}</p>
+      <p>{{ object.name }}</p>
+      <img src="{% static 'img/Eggs_Benedict.png' %}" alt="" style="width:300px;height:300px;"/>
+      <p>{{ object.price }}</p>
+{% endfor %}
+
+  </body>
+
+{% endblock %}

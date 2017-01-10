@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+    {% block content %}
+
+    <div class="container">
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create User">
+</form>
+<br>
+<IMG SRC="{% static 'img/eggsbennie.jpg' %}" ALT="" WIDTH=600 HEIGHT=400>
+    </div>
+     {% endblock %}

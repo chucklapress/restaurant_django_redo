@@ -1,0 +1,43 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome </title>
+      <link rel = "stylesheet" href ={% static "new/css/bootstrap.css"%}>
+  </head>
+  <body>
+    <br>
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+        <ul class="nav nav-pills">
+          {% if user.is_authenticated %}
+      <li role="presentation" class="active"><a href="{%url 'menu_view'%}">Menu item</a></li>
+      <li role="presentation" class="active"><a href="{% url 'create_order_view'%}">Start an Order</a></li>
+      <li role="presentation" class="active"><a href="{%url 'order_list_view'%}">View all orders</a></li>
+      <li role="presentation" class="active"><a href="{%url 'kitchen_order_view'%}">Kitchen orders</a></li>
+      <li role="presentation" class="active"><a href="{% url 'index_view' %}">Home</a></li>
+      <li role="presentation" class="active"><a href="{%url 'logout_view'%}?next=/">Logout</a></li>
+          {% else %}
+      <li role="presentation" class="active"><a href="{% url 'index_view' %}">Home</a></li>
+      <li role="presentation" class="active"><a href="{%url 'login_view'%}">Log in</a></li>
+      <li role="presentation" class="active"><a href="{% url 'sign_up_view'%}">Create user</a></li>
+      <li role="presentation"class="active"><a href="{%url 'menu_view'%}">Menu item</a></li>
+      <li role="presentation"class="active"><a href="{%url 'menu_item_view'%}">Special menu item</a></li>
+          {%endif%}
+
+
+     </div>
+   </nav>
+   <br>
+   <div class="container">
+
+   <h1>Welcome to Summer's Sunrise Cafe</h1>
+
+    {% block content %}
+        no content
+    {% endblock %}
+    </div>
+  </body>
+</html>

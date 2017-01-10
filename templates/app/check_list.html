@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Working Check</h3>
+{% for object in object_list %}
+    <p>Server:{{ object.server }}</p>
+    <p>Quanity ordered:{{ object.quanity }}</p>
+    <p>Order completed yes is:{{ object.is_completed }}</p>
+    <p>Check look up number:{{object.check_number}}</p>
+    <p>Memo notes:{{ object.memo_notes }}</p>
+    {% for price in object.price.all %}
+          <li>{{ price }}</li>
+    {% endfor %}
+    {% for object in object_list %}
+  <li>{{ object.price}} - {{ object.name }}</li>
+{% empty %}
+  <li></li>
+{% endfor %}
+
+{% endfor %}
+
+
+
+
+
+
+
+{% endblock %}

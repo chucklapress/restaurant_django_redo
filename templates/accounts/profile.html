@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+  <body>
+    {% if user == user_object %}Welcome{% endif %}
+    <h3>{{user}}</h3>
+    <br>
+    <br>
+    <br>
+    <IMG SRC="{% static 'img/frenchtoast.jpg' %}" ALT="" WIDTH=600 HEIGHT=400>
+
+  </body>
+
+{% endblock %}
