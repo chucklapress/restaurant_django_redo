@@ -88,4 +88,4 @@ class KitchenOrderView(ListView):
 
 class MenuItemView(ListView):
     model = Menu_Item
-    template = "menu_item_view.html"
+    template = "menu_item_list.html"
