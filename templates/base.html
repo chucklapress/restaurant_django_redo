@@ -13,7 +13,7 @@
           <div class="container">
         <ul class="nav nav-pills">
           {% if user.is_authenticated %}
-      <li role="presentation" class="active"><a href="{%url 'menu_view'%}">Menu item</a></li>
+      <li role="presentation" class="active"><a href="{%url 'menu_item_view'%}">Menu item</a></li>
       <li role="presentation" class="active"><a href="{% url 'create_order_view'%}">Start an Order</a></li>
       <li role="presentation" class="active"><a href="{%url 'order_list_view'%}">View all orders</a></li>
       <li role="presentation" class="active"><a href="{%url 'kitchen_order_view'%}">Kitchen orders</a></li>
@@ -23,8 +23,7 @@
       <li role="presentation" class="active"><a href="{% url 'index_view' %}">Home</a></li>
       <li role="presentation" class="active"><a href="{%url 'login_view'%}">Log in</a></li>
       <li role="presentation" class="active"><a href="{% url 'sign_up_view'%}">Create user</a></li>
-      <li role="presentation"class="active"><a href="{%url 'menu_view'%}">Menu item</a></li>
-      <li role="presentation"class="active"><a href="{%url 'menu_item_view'%}">Special menu item</a></li>
+      <li role="presentation"class="active"><a href="{%url 'menu_item_view'%}"> menu item</a></li>
           {%endif%}
 
 
