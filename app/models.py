@@ -60,3 +60,20 @@ class Menu_Item(models.Model):
 
     def __str__(self):
         return self.item_name
+
+
+class DrinkOptions(models.Model):
+    name = models.CharField(max_length=20)
+    cost = models.FloatField()
+    memo = models.TextField(max_length=None)
+    def __str__(self):
+        return str(self.name)
+
+class OpenTicket(models.Model):
+    guest_number = models.IntegerField()
+    guest_name = models.CharField(max_length=20)
+    guest_drink = models.ManyToManyField(DrinkOptions)
+    guest_choice = models.ManyToManyField(Menu_Item)
+    server_is = models.ForeignKey(Employee)
+    def __str__(self):
+        return str(self.guest_name)
