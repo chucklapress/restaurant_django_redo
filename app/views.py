@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import TemplateView, DetailView, CreateView, ListView, View
-from app.models import Menu, Order, Employee, Check, Menu_Item
+from app.models import Menu, Order, Employee, Check, Menu_Item, OpenTicket
 
 # Create your views here.
 
@@ -52,9 +52,11 @@ class LogoutView(View):
         return HttpResponseRedirect(settings.LOGIN_URL)
 
 class CreateOrderView(CreateView):
-    model = Order
-    fields = ["id","server_id","total_bill","is_cashed","table_number","is_server","is_completed","memo_notes"]
+    model = OpenTicket
+    fields = ["id","guest_number","guest_name","guest_drink","guest_choice","server_is"]
     success_url = "/"
+
+
 
 class OrderListView(ListView):
     model = Order
